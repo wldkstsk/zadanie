@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sample Site</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    body { padding-top: 50px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+	<h1>TASK 2</h1>
+	  <form action="/registration-check" method="post">
+		<div class="form-group">
+		  <label for="username">Email address</label>
+		  <input type="email" class="form-control" id="username" name="username" placeholder="name@example.com" data-cy="username" required>
+		</div>
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input type="password" class="form-control" id="password" name="password" placeholder="password" data-cy="password" required>
+		  </div>
+		<div class="form-group">
+		  <label for="country">Country</label>
+		  <select class="form-control" id="country" data-cy="country" required>
+			<option>Select...</option>
+			<option>UK</option>
+			<option>Poland</option>
+			<option>Ukraine</option>
+			<option>Germany</option>
+			<option>Italy</option>
+		  </select>
+		</div>
+		<div class="form-group">
+		  <label for="hobby">Hobby</label>
+		  <select multiple class="form-control" id="hobby" data-cy="hobby" required>
+			<option value="1">Books</option>
+			<option value="2">Movies, Music & Games</option>
+			<option value="3">Electronics & Computers</option>
+			<option value="4">Home, Garden & Tools</option>
+			<option value="5">Health & Beauty</option>
+			<option value="6">Toys, Kids & Baby</option>
+			<option value="7">Clothing & Jewelry</option>
+			<option value="8">Sports & Outdoors</option>
+		  </select>
+		</div>
+		<div class="form-group">
+			<label for="photo">Photo</label>
+			<input type="file" class="form-control-file" id="photo" required>
+		</div>
+		<div class="form-group">
+		  <label for="info">Additional info.</label>
+		  <textarea class="form-control" id="info" rows="3" data-cy="info"></textarea>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="checkbox" value="" id="registration-consent-1" data-cy="registration-consent" required>
+			<label class="form-check-label" for="registration-consent-1">
+				Conditions of Use and Privacy Notice 1.
+			</label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="checkbox" value="" id="registration-consent-2" data-cy="registration-consent">
+			<label class="form-check-label" for="registration-consent-2">
+				Conditions of Use and Privacy Notice 2.
+			</label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="checkbox" value="" id="registration-consent-3" data-cy="registration-consent" required>
+			<label class="form-check-label" for="registration-consent-3">
+				Conditions of Use and Privacy Notice 3.
+			</label>
+		</div>
+		<input type="submit" value="Save" class="btn btn-success btn-lg">
+	  </form>
+    </div>
+  </div>
+    
+</body>
+</html>
