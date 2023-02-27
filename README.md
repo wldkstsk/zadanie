@@ -12,4 +12,4 @@ Install project dependencies with: `npm install`
 
 ## 🚀 Run the project:
 
-Open the terminal and run: `npm app.js`
+Open the terminal and run: `node app.js`
