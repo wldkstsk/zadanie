@@ -18,14 +18,21 @@ export default class SignupPage {
 
     selectCountry() {
         cy.get('select[id="country"]').select('Poland')
+        cy.wait(1000)
     }
 
     selectHobby() {
         cy.get('select[id="hobby"]').select('Books')
+        cy.wait(1000)
+    }
+
+    selectFile() {
+        const fixtureFile = 'image.png';
+        cy.get('input[type="file"]').attachFile(fixtureFile);
     }
 
     AdditionalInfo() {
-        cy.get('textarea').type('Fajnie by bylo uzyc Selenium/Appium do "Choose photo" aby moc wybrac zdjecie z komputera')
+        cy.get('textarea').type('testowy')
     }
 
     checkBoxes() {
@@ -38,12 +45,12 @@ export default class SignupPage {
         cy.get('input[value="Save"]').click()
     }
 
-    verifyChooseFileTooltip() {
-        cy.contains('Please select a file.')
+    verifyAccountUrl() {
+        cy.url().should('include', '/success-registration')
     }
 
-    selectFile() {
-        const fixtureFile = 'image.png';
-        cy.get('input[type="file"]').attachFile(fixtureFile);
+    verifyPageText() {
+        cy.contains('Account created for: student@wskz.pl')
     }
+
 }

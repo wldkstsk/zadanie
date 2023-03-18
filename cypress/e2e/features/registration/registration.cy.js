@@ -23,6 +23,10 @@ And('I selected Hobby', () => {
     signup.selectHobby();
 })
 
+And('I select photo', () => {
+    signup.selectFile();
+})
+
 And('I provided additional information', () => {
     signup.AdditionalInfo();
 })
@@ -31,10 +35,14 @@ And('I checked Condition of Use checkboxes', () => {
     signup.checkBoxes();
 })
 
-Then('I clicked Save button to create an account', () => {
+And('I clicked Save button to create an account', () => {
     signup.saveButton();
 })
 
-And('I select photo', () => {
-    signup.selectFile();
+Then('I checked Url after creating an account', () => {
+    signup.verifyAccountUrl();
+})
+
+And("I checked text after success login", () => {
+    signup.verifyPageText();
 })

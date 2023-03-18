@@ -1,6 +1,6 @@
 Feature: Create user profile
 
-    Scenario: Complete registration without attaching a photo
+    Scenario: Complete registration correctly
         Given I navigate to the registration page
         When I entered email address
         And I entered password
@@ -9,4 +9,6 @@ Feature: Create user profile
         And I select photo
         And I provided additional information
         And I checked Condition of Use checkboxes
-        Then I clicked Save button to create an account
+        And I clicked Save button to create an account
+        Then I checked Url after creating an account
+        And I checked text after success login

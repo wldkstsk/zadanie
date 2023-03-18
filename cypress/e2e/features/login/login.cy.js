@@ -5,7 +5,6 @@ const login = new LoginPage()
 
 Given('I navigate to the login page', () => {
   login.loginURL();
-  //cy.visit("localhost:3000")
 })
 
 When("I entered valid user name", () => {
