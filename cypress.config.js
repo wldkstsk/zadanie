@@ -7,5 +7,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       on('file:preprocessor', cucumber())
     },
+    experimentalModifyObstructiveThirdPartyCode: true,
+    chromeWebSecurity: false
   }
 });

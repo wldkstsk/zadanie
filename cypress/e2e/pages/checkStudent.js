@@ -8,25 +8,22 @@ export default class StudentPage {
         cy.get('a[href="https://www.wskz.pl"]')
             .invoke("removeAttr", "target")
             .click()
-
-        cy.wait(4000)
+        cy.origin('https://www.wskz.pl', () => {
+            cy.url().should('contain', 'https://www.wskz.pl')
+        })
     }
 
     openSamorzadPage() {
-        cy.get('div[class="JiTKZ9"]').eq(2)
-            .trigger('mouseover')
-        cy.get('ul[class="BzPmc3 wixui-dropdown-menu__submenu"]')
-            .children().eq(12)
-            .click()
+        cy.contains('Samorząd studencki').click({ force: true })
     }
 
     verifySamorzadUrl() {
-        cy.url().should('be', 'https://www.wskz.pl/samorzad-studencki')
+        cy.url().should('contains', 'https://www.wskz.pl/samorzad-studencki')
     }
 
     verifyStudentInfo() {
-        cy.get('span').contains('Tomasz Michalik')
-        cy.get('p').contains('- student II roku')
+        cy.get('span').contains('Dawid Małecki')
+        cy.get('p').contains('student III roku')
     }
 
 }
